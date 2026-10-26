@@ -1,0 +1,236 @@
+[
+  {
+    "check": "lint_full_standard",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--isolated",
+      "src",
+      "tests",
+      "scripts",
+      "notebooks"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 1
+  },
+  {
+    "check": "lint_new",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--isolated",
+      "src/supplysight/constrained_planning.py",
+      "tests/test_constrained_planning.py"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 1
+  },
+  {
+    "check": "build",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "build",
+      "--wheel",
+      "--no-isolation",
+      "--outdir",
+      "/tmp/danfoss-build/SupplySight-Analytics"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=reports/current_upgrade/tests.xml"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "planning",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "supplysight.constrained_planning",
+      "--policy",
+      "data/synthetic/planning_policy.json"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "pipeline_clean",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "supplysight.cli",
+      "--root",
+      "/tmp/danfoss-current-clean"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "notebooks_clean",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "scripts/verify_notebooks.py",
+      "/tmp/danfoss-current-notebooks"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "installation_final",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "--no-build-isolation",
+      "--target",
+      "/tmp/danfoss-final-install/SupplySight-Analytics",
+      "."
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "lint_new_final",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--isolated",
+      "src/supplysight/constrained_planning.py",
+      "tests/test_constrained_planning.py"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "lint_new_final",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--isolated",
+      "src/supplysight/constrained_planning.py",
+      "tests/test_constrained_planning.py"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "build",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "build",
+      "--wheel",
+      "--no-isolation",
+      "--outdir",
+      "/tmp/danfoss-build/SupplySight-Analytics"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "installation_final",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "--no-build-isolation",
+      "--target",
+      "/tmp/danfoss-final-supply-install",
+      "."
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=reports/current_upgrade/tests.xml"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "planning",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "supplysight.constrained_planning",
+      "--policy",
+      "data/synthetic/planning_policy.json"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "notebooks_clean",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "scripts/verify_notebooks.py",
+      "/tmp/danfoss-current-notebooks"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  },
+  {
+    "check": "lint_full_final",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--isolated",
+      "--output-format",
+      "concise",
+      "src",
+      "tests",
+      "scripts",
+      "notebooks"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 1
+  },
+  {
+    "check": "config_override_trial",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "supplysight.constrained_planning",
+      "--inputs",
+      "data/synthetic/configurable_planning_example.csv",
+      "--forecasts",
+      "data/synthetic/configurable_forecast_example.csv",
+      "--policy",
+      "data/synthetic/planning_policy.json",
+      "--output",
+      "reports/current_upgrade/config_override_trial"
+    ],
+    "cwd": "/workspace/scratch/3accceb89fa4/work/SupplySight-Analytics",
+    "exit_code": 0
+  }
+]

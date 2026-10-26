@@ -1,0 +1,15 @@
+{
+  "protocol": "Fixed before this execution; historical test dates were evaluated previously",
+  "source_sha256": "058d06607729f10753cad76b042cb273f9f5e7de329ea8afb79f8278f0ec1b87",
+  "models": [
+    "naive",
+    "seasonal_naive",
+    "ridge",
+    "croston_sba"
+  ],
+  "alpha": 0.1,
+  "folds": 3,
+  "horizon": 14,
+  "segmentation": "initial training prefix only, volume tertiles",
+  "future_selection": "No selection; planning retains seasonal_naive"
+}

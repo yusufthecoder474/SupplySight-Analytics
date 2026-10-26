@@ -1,0 +1,60 @@
+..........................................F...                           [100%]
+=================================== FAILURES ===================================
+________________________ test_executed_pipeline_outputs ________________________
+
+    def test_executed_pipeline_outputs():
+        stats = json.loads((ROOT / "reports/evaluation.json").read_text())
+        assert stats["raw_records"] == stats["accepted_records"] + stats["rejected_records"]
+        assert stats["silver_units"] == stats["gold_units"]
+        gold = ROOT / "data/processed/gold"
+        daily = pd.read_csv(gold / "daily_demand.csv")
+        assert {"product_id", "date", "units"} <= set(daily.columns)
+        assert len(daily) == stats["products"] * stats["history_days"]
+        assert not daily.duplicated(["product_id", "date"]).any()
+        for name in [
+            "product_master",
+            "daily_demand",
+            "weekly_demand",
+            "date_dimension",
+            "forecast_results",
+            "future_forecast",
+            "inventory_risk",
+            "product_forecast_scores",
+        ]:
+            df = pd.read_csv(gold / f"{name}.csv")
+            assert len(df)
+            required = {
+                "product_master": {"product_id", "description"},
+                "date_dimension": {"date", "year", "month", "week"},
+                "forecast_results": {
+                    "product_id",
+                    "date",
+                    "train_end",
+                    "model",
+                    "actual",
+                    "predicted",
+                    "absolute_error",
+                },
+                "future_forecast": {"product_id", "date", "as_of", "model", "predicted"},
+                "inventory_risk": {
+                    "product_id",
+                    "as_of",
+                    "stock_risk",
+                    "days_cover",
+                    "planning_source",
+                },
+            }.get(name, {"product_id"})
+            assert required <= set(df.columns)
+>           assert len(
+                pd.read_parquet(gold / name if (gold / name).is_dir() else gold / f"{name}.parquet")
+            ) == len(df)
+E           AssertionError: assert 40 == 20
+E            +  where 40 = len(   product_id                         description\n0       20725             LUNCH BAG RED RETROSPOT\n1       21181     ...OLOUR BIRD ORNAMENT\n38     85099B             JUMBO BAG RED RETROSPOT\n39     85123A  WHITE HANGING HEART T-LIGHT HOLDER)
+E            +    where    product_id                         description\n0       20725             LUNCH BAG RED RETROSPOT\n1       21181     ...OLOUR BIRD ORNAMENT\n38     85099B             JUMBO BAG RED RETROSPOT\n39     85123A  WHITE HANGING HEART T-LIGHT HOLDER = <function read_parquet at 0x7f4250f5e700>(PosixPath('/workspace/scratch/ab5516f2c60c/SupplySight-Analytics/data/processed/gold/product_master'))
+E            +      where <function read_parquet at 0x7f4250f5e700> = pd.read_parquet
+E            +  and   20 = len(   product_id                         description\n0       20725             LUNCH BAG RED RETROSPOT\n1       21181     ...OLOUR BIRD ORNAMENT\n18     85099B             JUMBO BAG RED RETROSPOT\n19     85123A  WHITE HANGING HEART T-LIGHT HOLDER)
+
+SupplySight-Analytics/tests/test_reconciliation.py:53: AssertionError
+=========================== short test summary info ============================
+FAILED SupplySight-Analytics/tests/test_reconciliation.py::test_executed_pipeline_outputs
+1 failed, 45 passed in 21.06s

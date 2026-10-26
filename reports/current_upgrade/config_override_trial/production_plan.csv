@@ -1,0 +1,2 @@
+product_id,planning_source,forecast_daily,on_hand,lead_days,weekly_capacity,safety_stock,reorder_point,target_stock,reorder_required,horizon_days,horizon_demand,horizon_capacity,requested_production,planned_production,deferred_production,arriving_in_horizon,capacity_limited,prearrival_shortfall,modeled_unserved_units,fulfilled_units,projected_ending_stock,production_arrives_after_horizon
+DEMO,SYNTHETIC hand-calculated demonstration,10.0,20.0,4.0,35.0,12.0,52.0,122.0,True,7,70.0,35.0,102.0,35.0,67.0,35.0,True,20.0,20.0,50.0,5.0,False

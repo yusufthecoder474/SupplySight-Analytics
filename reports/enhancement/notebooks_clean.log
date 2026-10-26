@@ -1,0 +1,124 @@
+fatal library error, lookup self
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/26 09:10:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/26 09:10:43 WARN MacAddressUtil: Failed to find a usable hardware address from the network interfaces; using random bytes: 9b:65:38:28:79:9f:61:6f
+LOCAL NOTEBOOK: 01_bronze_ingestion.py
+[Stage 1:>                                                          (0 + 1) / 1]                                                                                {'bronze_rows': 26058, 'spark_version': '3.5.3'}
++-----------------+----------------------------------------------------------------+--------------+
+|source_file      |source_sha256                                                   |schema_version|
++-----------------+----------------------------------------------------------------+--------------+
+|retail_subset.csv|96445a80ef65d056be5c8176cd4d6309487ead39189471defc1ebb25e275d090|1             |
++-----------------+----------------------------------------------------------------+--------------+
+
+{"notebook": "01_bronze_ingestion", "environment": "local PySpark", "utc": "2026-10-26T07:10:48.815838+00:00", "python": "3.12.14", "spark": "3.5.3", "packages": {"pandas": "2.2.3", "numpy": "2.3.5", "scikit-learn": "1.8.0", "duckdb": "2.0.0", "pyarrow": "26.0.0"}}
+LOCAL NOTEBOOK: 02_silver_validation.py
+{'accepted': 24258, 'rejected': 1800}
+{"notebook": "02_silver_validation", "environment": "local PySpark", "utc": "2026-10-26T07:10:56.482181+00:00", "python": "3.12.14", "spark": "3.5.3", "packages": {"pandas": "2.2.3", "numpy": "2.3.5", "scikit-learn": "1.8.0", "duckdb": "2.0.0", "pyarrow": "26.0.0"}}
+LOCAL NOTEBOOK: 03_gold_supply_chain_kpis.py
+product_master 20
+daily_demand 7300
+weekly_demand 1060
+date_dimension 365
++----------+-------+
+|product_id|  units|
++----------+-------+
+|     20725|19035.0|
+|     21181|11563.0|
+|     21212|35937.0|
+|     21733| 7602.0|
+|     21754| 2701.0|
+|     22111| 4248.0|
+|     22197|50681.0|
+|     22423|13402.0|
+|     22457| 8191.0|
+|     22469|17797.0|
+|     22470| 9781.0|
+|     22666| 7786.0|
+|     22720| 7314.0|
+|     22722| 5866.0|
+|     22960| 8439.0|
+|     22961|15380.0|
+|     84378| 6150.0|
+|     84879|35032.0|
+|    85099B|47266.0|
+|    85123A|36826.0|
++----------+-------+
+
+{"notebook": "03_gold_supply_chain_kpis", "environment": "local PySpark", "utc": "2026-10-26T07:10:59.022468+00:00", "python": "3.12.14", "spark": "3.5.3", "packages": {"pandas": "2.2.3", "numpy": "2.3.5", "scikit-learn": "1.8.0", "duckdb": "2.0.0", "pyarrow": "26.0.0"}}
+LOCAL NOTEBOOK: 04_demand_forecasting.py
+{
+  "raw_records": 26058,
+  "accepted_records": 24258,
+  "rejected_records": 1800,
+  "quality_rules": 8,
+  "silver_units": 350997.0,
+  "gold_units": 350997.0,
+  "products": 20,
+  "history_days": 365,
+  "history_start": "2010-12-01",
+  "history_end": "2011-11-30",
+  "folds": 3,
+  "horizon_days": 14,
+  "evaluated_days_per_product": 42,
+  "forecast_rows": 2520,
+  "gold_datasets": 8,
+  "model_comparison": [
+    {
+      "model": "naive",
+      "mae": 67.06428571428572,
+      "wape": 0.9253285151116951,
+      "bias": -0.11879106438896189,
+      "mape_nonzero_only": 1.8365856339200712,
+      "absolute_error": 56334.0,
+      "actual_units": 60880.0
+    },
+    {
+      "model": "ridge",
+      "mae": 55.54788244192644,
+      "wape": 0.76642938980319,
+      "bias": -0.3154998461555157,
+      "mape_nonzero_only": 1.7714268582420256,
+      "absolute_error": 46660.22125121821,
+      "actual_units": 60880.0
+    },
+    {
+      "model": "seasonal_naive",
+      "mae": 71.79523809523809,
+      "wape": 0.990604467805519,
+      "bias": -0.09471090670170827,
+      "mape_nonzero_only": 2.1538398311291385,
+      "absolute_error": 60308.0,
+      "actual_units": 60880.0
+    }
+  ],
+  "ridge_improvement_vs_seasonal_wape": 0.22630129914409025,
+  "ridge_products_improved_pct": 90.0,
+  "planning_model": "seasonal_naive (prespecified)",
+  "at_risk_products_synthetic": 8,
+  "overstock_products_synthetic": 4,
+  "databricks": "NOT EXECUTED",
+  "powerbi_pages_verified": 0,
+  "dax_measures_verified": 0,
+  "ci": "configured, not executed remotely",
+  "reconciled_kpis": 14
+}
+{"notebook": "04_demand_forecasting", "environment": "local PySpark", "utc": "2026-10-26T07:11:01.960424+00:00", "python": "3.12.14", "spark": "3.5.3", "packages": {"pandas": "2.2.3", "numpy": "2.3.5", "scikit-learn": "1.8.0", "duckdb": "2.0.0", "pyarrow": "26.0.0"}}
+LOCAL NOTEBOOK: 05_data_quality_reconciliation.py
+                 kpi     reference    duckdb_sql    difference  passed
+        total_demand 350997.000000 350997.000000  0.000000e+00    True
+       weekly_demand 350997.000000 350997.000000  0.000000e+00    True
+       product_count     20.000000     20.000000  0.000000e+00    True
+          risk_count      8.000000      8.000000  0.000000e+00    True
+     overstock_count      4.000000      4.000000  0.000000e+00    True
+      reorder_points  32200.702453  32200.702453  3.637979e-12    True
+          days_cover     34.856763     34.856763  0.000000e+00    True
+capacity_utilization      0.796456      0.796456  0.000000e+00    True
+          naive_wape      0.925329      0.925329  0.000000e+00    True
+          naive_bias     -0.118791     -0.118791  0.000000e+00    True
+ seasonal_naive_wape      0.990604      0.990604  0.000000e+00    True
+ seasonal_naive_bias     -0.094711     -0.094711  0.000000e+00    True
+          ridge_wape      0.766429      0.766429 -3.330669e-16    True
+          ridge_bias     -0.315500     -0.315500 -5.551115e-17    True
+All independent arithmetic controls passed; native BI execution still unverified.
+{"notebook": "05_data_quality_reconciliation", "environment": "local PySpark", "utc": "2026-10-26T07:11:01.972050+00:00", "python": "3.12.14", "spark": "3.5.3", "packages": {"pandas": "2.2.3", "numpy": "2.3.5", "scikit-learn": "1.8.0", "duckdb": "2.0.0", "pyarrow": "26.0.0"}}

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supplysight"
+version = "1.0.0"
+description = "Auditable sales forecasting and synthetic inventory planning with local Spark"
+requires-python = ">=3.11,<3.13"
+dependencies = ["pyspark==3.5.3", "pandas==2.2.3", "numpy==2.3.5", "scikit-learn==1.8.0", "pyarrow==26.0.0", "duckdb==2.0.0", "matplotlib==3.10.8", "openpyxl==3.1.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+supplysight = "supplysight.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+

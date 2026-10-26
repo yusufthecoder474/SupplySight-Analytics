@@ -1,0 +1,43 @@
+WARN Fixing invalid version specifier by removing trailing comma (before: `>=3.6,`; after: `>=3.6`)
+Resolved 31 packages in 13.68s
+   Building supplysight @ file:///workspace/scratch/ab5516f2c60c/SupplySight-Analytics
+Downloading pillow (6.8MiB)
+Downloading matplotlib (8.3MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading fonttools (5.2MiB)
+Downloading scikit-learn (8.5MiB)
+Downloading scipy (33.7MiB)
+Downloading numpy (15.8MiB)
+Downloading pandas (12.1MiB)
+ Downloaded pillow
+ Downloaded matplotlib
+      Built supplysight @ file:///workspace/scratch/ab5516f2c60c/SupplySight-Analytics
+ Downloaded pandas
+ Downloaded numpy
+ Downloaded scikit-learn
+ Downloaded kiwisolver
+ Downloaded fonttools
+ Downloaded scipy
+Prepared 21 packages in 1.69s
+Installed 21 packages in 19ms
+ + cloudpickle==3.1.2
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + et-xmlfile==2.0.0
+ + fonttools==4.67.0
+ + joblib==1.6.0
+ + kiwisolver==1.5.1
+ + matplotlib==3.10.8
+ + numpy==2.3.5
+ + openpyxl==3.1.5
+ + pandas==2.2.3
+ + pillow==13.0.0
+ + pyparsing==3.3.3
+ + python-dateutil==3.0.0
+ + pytz==2026.5
+ + scikit-learn==1.8.0
+ + scipy==1.18.1
+ + six==1.17.0
+ + supplysight==1.0.0 (from file:///workspace/scratch/ab5516f2c60c/SupplySight-Analytics)
+ + threadpoolctl==3.7.0
+ + tzdata==2026.5

@@ -1,0 +1,32 @@
+fatal library error, lookup self
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/25 18:08:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/25 18:08:12 WARN MacAddressUtil: Failed to find a usable hardware address from the network interfaces; using random bytes: c8:eb:0e:c6:d3:a2:03:2c
+LOCAL NOTEBOOK: 01_bronze_ingestion.py
+[Stage 1:>                                                          (0 + 1) / 1]                                                                                {'bronze_rows': 26058, 'spark_version': '3.5.3'}
++-----------------+----------------------------------------------------------------+--------------+
+|source_file      |source_sha256                                                   |schema_version|
++-----------------+----------------------------------------------------------------+--------------+
+|retail_subset.csv|96445a80ef65d056be5c8176cd4d6309487ead39189471defc1ebb25e275d090|1             |
++-----------------+----------------------------------------------------------------+--------------+
+
+LOCAL NOTEBOOK: 02_silver_validation.py
+Traceback (most recent call last):
+  File "/workspace/scratch/ab5516f2c60c/SupplySight-Analytics/scripts/verify_notebooks.py", line 14, in <module>
+    runpy.run_path(str(notebook), init_globals={"spark": spark})
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/ab5516f2c60c/SupplySight-Analytics/notebooks/02_silver_validation.py", line 31, in <module>
+    write_parquet(rejected, root / "data/processed/rejected")
+  File "/workspace/scratch/ab5516f2c60c/SupplySight-Analytics/src/supplysight/storage.py", line 17, in write_parquet
+    frame.write.mode("errorifexists").parquet(str(path))
+  File "/workspace/scratch/ab5516f2c60c/.venv/lib/python3.12/site-packages/pyspark/sql/readwriter.py", line 1721, in parquet
+    self._jwrite.parquet(path)
+  File "/workspace/scratch/ab5516f2c60c/.venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ab5516f2c60c/.venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [PATH_ALREADY_EXISTS] Path file:/workspace/scratch/ab5516f2c60c/SupplySight-Analytics/data/processed/rejected already exists. Set mode as "overwrite" to overwrite the existing path.

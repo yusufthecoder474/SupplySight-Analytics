@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+# The small source subset and validated reporting outputs are intentionally included.
+

@@ -1,0 +1,4 @@
+{"kind":"notice","message":"Cell search matched 0 entries."}
+{"kind":"table","sheet":"Executive Summary","address":"A5:D16","rows":12,"cols":4,"values":[["Measure","Value",null,null],["Total sales units",350997,null,null],["Products monitored",20,null,null],["At-risk products (synthetic)",8,null,null],["Overstock products (synthetic)",4,null,null],["Mean days cover (synthetic)",34.85676332325109,null,null],[null,null,null,null],[null,null,null,null],["Model","MAE units","WAPE","Bias"],["naive",67.06428571428572,0.9253285151116951,-0.11879106438896189],["ridge",55.547882441926596,0.7664293898031922,-0.31549984615549564],["seasonal_naive",71.79523809523809,0.990604467805519,-0.09471090670170827]]}
+Inspect result written to file: /workspace/scratch/ab5516f2c60c/SupplySight-Analytics/excel/SupplySight_Operations_Analysis.xlsx.inspect.ndjson
+Workbook exported; scenario recalculation verified

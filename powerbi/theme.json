@@ -1,0 +1,12 @@
+{
+  "name": "SupplySight",
+  "dataColors": [
+    "#0D9488",
+    "#2563EB",
+    "#64748B",
+    "#DC2626"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#17324D",
+  "tableAccent": "#0D9488"
+}

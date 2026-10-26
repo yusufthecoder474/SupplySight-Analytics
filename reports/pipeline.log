@@ -1,0 +1,61 @@
+fatal library error, lookup self
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/25 17:56:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/25 17:56:32 WARN MacAddressUtil: Failed to find a usable hardware address from the network interfaces; using random bytes: a2:95:76:a9:1f:6b:9f:49
+[Stage 5:>                                                          (0 + 1) / 1]                                                                                {
+  "raw_records": 26058,
+  "accepted_records": 24258,
+  "rejected_records": 1800,
+  "quality_rules": 8,
+  "silver_units": 350997.0,
+  "gold_units": 350997.0,
+  "products": 20,
+  "history_days": 365,
+  "history_start": "2010-12-01",
+  "history_end": "2011-11-30",
+  "folds": 3,
+  "horizon_days": 14,
+  "evaluated_days_per_product": 42,
+  "forecast_rows": 2520,
+  "gold_datasets": 8,
+  "model_comparison": [
+    {
+      "model": "naive",
+      "mae": 67.06428571428572,
+      "wape": 0.9253285151116951,
+      "bias": -0.11879106438896189,
+      "mape_nonzero_only": 1.8365856339200712,
+      "absolute_error": 56334.0,
+      "actual_units": 60880.0
+    },
+    {
+      "model": "ridge",
+      "mae": 55.54788244192644,
+      "wape": 0.76642938980319,
+      "bias": -0.3154998461555157,
+      "mape_nonzero_only": 1.7714268582420256,
+      "absolute_error": 46660.22125121821,
+      "actual_units": 60880.0
+    },
+    {
+      "model": "seasonal_naive",
+      "mae": 71.79523809523809,
+      "wape": 0.990604467805519,
+      "bias": -0.09471090670170827,
+      "mape_nonzero_only": 2.1538398311291385,
+      "absolute_error": 60308.0,
+      "actual_units": 60880.0
+    }
+  ],
+  "ridge_improvement_vs_seasonal_wape": 0.22630129914409025,
+  "ridge_products_improved_pct": 90.0,
+  "planning_model": "seasonal_naive (prespecified)",
+  "at_risk_products_synthetic": 8,
+  "overstock_products_synthetic": 4,
+  "databricks": "NOT EXECUTED",
+  "powerbi_pages_verified": 0,
+  "dax_measures_verified": 0,
+  "ci": "configured, not executed remotely",
+  "reconciled_kpis": 14
+}

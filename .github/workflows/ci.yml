@@ -1,0 +1,26 @@
+name: Local Spark quality checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: pip install -e '.[dev]'
+      - run: ruff check src scripts tests notebooks && ruff format --check src scripts tests notebooks
+      - run: python -m supplysight.cli
+      - run: python -m pytest -q --junitxml=reports/ci_tests.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: supplysight-evidence
+          path: reports/
+          retention-days: 7
+

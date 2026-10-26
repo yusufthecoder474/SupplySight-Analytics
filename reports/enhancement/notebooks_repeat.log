@@ -1,0 +1,5 @@
+fatal library error, lookup self
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/26 09:15:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/26 09:15:30 WARN MacAddressUtil: Failed to find a usable hardware address from the network interfaces; using random bytes: 58:2c:7f:06:cd:c6:e1:b4

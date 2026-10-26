@@ -1,0 +1,712 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> notebooks/01_bronze_ingestion.py:7:1
+  |
+6 | # COMMAND ----------
+7 | import time
+  | ^^^^^^^^^^^
+8 | _notebook_started = time.perf_counter()
+9 | import sys
+  |
+help: Organize imports
+  |
+7 | import time
+8 +
+9 | _notebook_started = time.perf_counter()
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/01_bronze_ingestion.py:37:1
+   |
+36 | # COMMAND ----------
+37 | from supplysight.runtime_log import record_runtime
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+38 | record_runtime(root, "01_bronze_ingestion", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "loca…
+   |
+help: Organize imports
+   |
+37 | from supplysight.runtime_log import record_runtime
+38 +
+39 | record_runtime(root, "01_bronze_ingestion", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "local PySpark", time.perf_counter() - _notebook_started)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> notebooks/02_silver_validation.py:7:1
+  |
+6 | # COMMAND ----------
+7 | import time
+  | ^^^^^^^^^^^
+8 | _notebook_started = time.perf_counter()
+9 | import sys
+  |
+help: Organize imports
+  |
+7 | import time
+8 +
+9 | _notebook_started = time.perf_counter()
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/02_silver_validation.py:56:1
+   |
+55 | # COMMAND ----------
+56 | from supplysight.runtime_log import record_runtime
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+57 | record_runtime(root, "02_silver_validation", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "loc…
+   |
+help: Organize imports
+   |
+56 | from supplysight.runtime_log import record_runtime
+57 +
+58 | record_runtime(root, "02_silver_validation", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "local PySpark", time.perf_counter() - _notebook_started)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> notebooks/03_gold_supply_chain_kpis.py:7:1
+  |
+6 | # COMMAND ----------
+7 | import time
+  | ^^^^^^^^^^^
+8 | _notebook_started = time.perf_counter()
+9 | import sys
+  |
+help: Organize imports
+  |
+7 | import time
+8 +
+9 | _notebook_started = time.perf_counter()
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/03_gold_supply_chain_kpis.py:39:1
+   |
+38 | # COMMAND ----------
+39 | from supplysight.runtime_log import record_runtime
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+40 | record_runtime(root, "03_gold_supply_chain_kpis", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else…
+   |
+help: Organize imports
+   |
+39 | from supplysight.runtime_log import record_runtime
+40 +
+41 | record_runtime(root, "03_gold_supply_chain_kpis", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "local PySpark", time.perf_counter() - _notebook_started)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> notebooks/04_demand_forecasting.py:7:1
+  |
+6 | # COMMAND ----------
+7 | import time
+  | ^^^^^^^^^^^
+8 | _notebook_started = time.perf_counter()
+9 | import sys
+  |
+help: Organize imports
+  |
+7 | import time
+8 +
+9 | _notebook_started = time.perf_counter()
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/04_demand_forecasting.py:48:1
+   |
+46 | }
+47 | finish(root, frames, stats)
+48 | from supplysight.constrained_planning import run as constrained_plan
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+49 | constrained_plan(root)
+50 | print((root / "reports/evaluation.json").read_text())
+   |
+help: Organize imports
+   |
+48 | from supplysight.constrained_planning import run as constrained_plan
+49 +
+50 | constrained_plan(root)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/04_demand_forecasting.py:53:1
+   |
+52 | # COMMAND ----------
+53 | from supplysight.runtime_log import record_runtime
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+54 | record_runtime(root, "04_demand_forecasting", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "lo…
+   |
+help: Organize imports
+   |
+53 | from supplysight.runtime_log import record_runtime
+54 +
+55 | record_runtime(root, "04_demand_forecasting", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "local PySpark", time.perf_counter() - _notebook_started)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> notebooks/05_data_quality_reconciliation.py:7:1
+  |
+6 | # COMMAND ----------
+7 | import time
+  | ^^^^^^^^^^^
+8 | _notebook_started = time.perf_counter()
+9 | import json
+  |
+help: Organize imports
+  |
+7 | import time
+8 +
+9 | _notebook_started = time.perf_counter()
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> notebooks/05_data_quality_reconciliation.py:42:1
+   |
+41 | # COMMAND ----------
+42 | from supplysight.runtime_log import record_runtime
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+43 | record_runtime(root, "05_data_quality_reconciliation", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals()…
+   |
+help: Organize imports
+   |
+42 | from supplysight.runtime_log import record_runtime
+43 +
+44 | record_runtime(root, "05_data_quality_reconciliation", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals() else "local PySpark", time.perf_counter() - _notebook_started)
+   |
+
+F821 Undefined name `spark`
+  --> notebooks/05_data_quality_reconciliation.py:43:56
+   |
+41 | # COMMAND ----------
+42 | from supplysight.runtime_log import record_runtime
+43 | record_runtime(root, "05_data_quality_reconciliation", spark if "spark" in globals() else None, "Databricks" if "dbutils" in globals()…
+   |                                                        ^^^^^
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> scripts/prepare_workbook_enhancement.py:2:1
+  |
+1 |   """Run study and capacity first, then regenerate the executed workbook snapshot input."""
+2 | / from pathlib import Path
+3 | | import json
+4 | | import pandas as pd
+  | |___________________^
+5 |
+6 |   root=Path(__file__).resolve().parents[1]
+  |
+help: Organize imports
+  |
+1 | """Run study and capacity first, then regenerate the executed workbook snapshot input."""
+2 + import json
+3 | from pathlib import Path
+  - import json
+4 +
+5 | import pandas as pd
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/supplysight/capacity.py:2:1
+  |
+1 |   """Capacity and lead-time exceptions for the existing deterministic planning scenario."""
+2 | / import json
+3 | | from pathlib import Path
+4 | | import numpy as np
+5 | | import pandas as pd
+  | |___________________^
+help: Organize imports
+  |
+3 | from pathlib import Path
+4 +
+5 | import numpy as np
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/supplysight/capacity.py:15:12
+   |
+13 | …ad_demand=daily*lead
+14 | …order=lead_demand+1.65*std*np.sqrt(lead)
+15 | …turn dict(weekly_expected_demand=weekly, demand_ca…eorder, reorder_required=bool(stock<reorder))
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^…^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+   |
+14 |     reorder=lead_demand+1.65*std*np.sqrt(lead)
+   -     return dict(weekly_expected_demand=weekly, demand_capacity_ratio=weekly/capacity, capacity_shortfall=bool(weekly>capacity), shortfall_units=max(0.,weekly-capacity), lead_time_demand=lead_demand, lead_time_stock_risk=bool(stock<lead_demand), forecast_days_cover=stock/daily if daily else None, reorder_threshold=reorder, reorder_required=bool(stock<reorder))
+15 +     return {"weekly_expected_demand": weekly, "demand_capacity_ratio": weekly/capacity, "capacity_shortfall": bool(weekly>capacity), "shortfall_units": max(0.,weekly-capacity), "lead_time_demand": lead_demand, "lead_time_stock_risk": bool(stock<lead_demand), "forecast_days_cover": stock/daily if daily else None, "reorder_threshold": reorder, "reorder_required": bool(stock<reorder)}
+16 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/supplysight/capacity.py:31:12
+   |
+29 | …enario=table[["product_id","as_of","on_hand","lead_days","weekly_capacity","planning_source"]]
+30 | …enario.to_csv(out/"synthetic_planning_inputs.csv",index=False)
+31 | …port=dict(products=len(table),capacity_shortfall_p…_capacity=float(table.weekly_capacity.sum()))
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^…^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+32 | …ut/"planning_summary.json").write_text(json.dumps(report,indent=2))
+33 | …ut/"OPERATIONAL_PLANNING.md").write_text("# Synthetic operational planning scenario\n\n"+json.dumps(report,indent=2)+"\n\nExisting seed-52316 scenario inputs are reused. Capacity is modeled units/week, not measured utilization. Weekly demand = prespecified seasonal-naive daily forecast ×7. Cover uses forecast daily units, whereas historical_days_cover retains the origin…
+   |
+help: Rewrite as a literal
+   |
+30 |     scenario.to_csv(out/"synthetic_planning_inputs.csv",index=False)
+   -     report=dict(products=len(table),capacity_shortfall_products=int(table.capacity_shortfall.sum()),lead_time_stock_risk_products=int(table.lead_time_stock_risk.sum()),reorder_required_products=int(table.reorder_required.sum()),exceptions=int(table.exception.sum()),weekly_demand=float(table.weekly_expected_demand.sum()),weekly_capacity=float(table.weekly_capacity.sum()))
+31 +     report={"products": len(table),"capacity_shortfall_products": int(table.capacity_shortfall.sum()),"lead_time_stock_risk_products": int(table.lead_time_stock_risk.sum()),"reorder_required_products": int(table.reorder_required.sum()),"exceptions": int(table.exception.sum()),"weekly_demand": float(table.weekly_expected_demand.sum()),"weekly_capacity": float(table.weekly_capacity.sum())}
+32 |     (out/"planning_summary.json").write_text(json.dumps(report,indent=2))
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/supplysight/constrained_planning.py:8:1
+   |
+ 6 |   """
+ 7 |
+ 8 | / from dataclasses import asdict, dataclass
+ 9 | | import json
+10 | | from pathlib import Path
+11 | |
+12 | | import numpy as np
+13 | | import pandas as pd
+   | |___________________^
+help: Organize imports
+   |
+7  |
+8  + import json
+9  | from dataclasses import asdict, dataclass
+   - import json
+10 | from pathlib import Path
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/supplysight/constrained_planning.py:33:9
+   |
+31 | def number(value, name):
+32 |     if isinstance(value, bool):
+33 |         raise ValueError(f"{name} must be numeric, not boolean")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+34 |     try:
+35 |         result = float(value)
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/supplysight/constrained_planning.py:89:12
+    |
+ 87 |       fulfilled = demand - unserved
+ 88 |       ending = stock + arrives - fulfilled
+ 89 |       return dict(
+    |  ____________^
+ 90 | |         forecast_daily=daily,
+ 91 | |         on_hand=stock,
+ 92 | |         lead_days=lead,
+ 93 | |         weekly_capacity=capacity,
+ 94 | |         safety_stock=float(safety),
+ 95 | |         reorder_point=float(reorder),
+ 96 | |         target_stock=float(target),
+ 97 | |         reorder_required=bool(needs_order),
+ 98 | |         horizon_days=policy.horizon_days,
+ 99 | |         horizon_demand=float(demand),
+100 | |         horizon_capacity=float(available),
+101 | |         requested_production=float(requested),
+102 | |         planned_production=float(planned),
+103 | |         deferred_production=float(deferred),
+104 | |         arriving_in_horizon=float(arrives),
+105 | |         capacity_limited=bool(deferred > 0),
+106 | |         prearrival_shortfall=float(prearrival_shortfall),
+107 | |         modeled_unserved_units=float(unserved),
+108 | |         fulfilled_units=float(fulfilled),
+109 | |         projected_ending_stock=float(max(0.0, ending)),
+110 | |         production_arrives_after_horizon=bool(planned > 0 and lead > policy.horizon_days),
+111 | |     )
+    | |_____^
+help: Rewrite as a literal
+    |
+88  |     ending = stock + arrives - fulfilled
+    -     return dict(
+    -         forecast_daily=daily,
+    -         on_hand=stock,
+    -         lead_days=lead,
+    -         weekly_capacity=capacity,
+    -         safety_stock=float(safety),
+    -         reorder_point=float(reorder),
+    -         target_stock=float(target),
+    -         reorder_required=bool(needs_order),
+    -         horizon_days=policy.horizon_days,
+    -         horizon_demand=float(demand),
+    -         horizon_capacity=float(available),
+    -         requested_production=float(requested),
+    -         planned_production=float(planned),
+    -         deferred_production=float(deferred),
+    -         arriving_in_horizon=float(arrives),
+    -         capacity_limited=bool(deferred > 0),
+    -         prearrival_shortfall=float(prearrival_shortfall),
+    -         modeled_unserved_units=float(unserved),
+    -         fulfilled_units=float(fulfilled),
+    -         projected_ending_stock=float(max(0.0, ending)),
+    -         production_arrives_after_horizon=bool(planned > 0 and lead > policy.horizon_days),
+    -     )
+89  +     return {
+90  +         "forecast_daily": daily,
+91  +         "on_hand": stock,
+92  +         "lead_days": lead,
+93  +         "weekly_capacity": capacity,
+94  +         "safety_stock": float(safety),
+95  +         "reorder_point": float(reorder),
+96  +         "target_stock": float(target),
+97  +         "reorder_required": bool(needs_order),
+98  +         "horizon_days": policy.horizon_days,
+99  +         "horizon_demand": float(demand),
+100 +         "horizon_capacity": float(available),
+101 +         "requested_production": float(requested),
+102 +         "planned_production": float(planned),
+103 +         "deferred_production": float(deferred),
+104 +         "arriving_in_horizon": float(arrives),
+105 +         "capacity_limited": bool(deferred > 0),
+106 +         "prearrival_shortfall": float(prearrival_shortfall),
+107 +         "modeled_unserved_units": float(unserved),
+108 +         "fulfilled_units": float(fulfilled),
+109 +         "projected_ending_stock": float(max(0.0, ending)),
+110 +         "production_arrives_after_horizon": bool(planned > 0 and lead > policy.horizon_days),
+111 +     }
+112 |
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/supplysight/constrained_planning.py:197:15
+    |
+195 |           out / "exceptions.csv", index=False
+196 |       )
+197 |       summary = dict(
+    |  _______________^
+198 | |         policy=asdict(policy),
+199 | |         products=len(plans),
+200 | |         requested_production=float(plans.requested_production.sum()),
+201 | |         planned_production=float(plans.planned_production.sum()),
+202 | |         deferred_production=float(plans.deferred_production.sum()),
+203 | |         capacity_limited_products=int(plans.capacity_limited.sum()),
+204 | |         modeled_unserved_units=float(plans.modeled_unserved_units.sum()),
+205 | |         modeled_risk_products=int((plans.modeled_unserved_units > 0).sum()),
+206 | |         scope="SYNTHETIC independent product capacities; uniform forecast demand; lost sales; no shared factory optimization",
+207 | |     )
+    | |_____^
+208 |       (out / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False))
+209 |       return plans
+    |
+help: Rewrite as a literal
+    |
+196 |     )
+    -     summary = dict(
+    -         policy=asdict(policy),
+    -         products=len(plans),
+    -         requested_production=float(plans.requested_production.sum()),
+    -         planned_production=float(plans.planned_production.sum()),
+    -         deferred_production=float(plans.deferred_production.sum()),
+    -         capacity_limited_products=int(plans.capacity_limited.sum()),
+    -         modeled_unserved_units=float(plans.modeled_unserved_units.sum()),
+    -         modeled_risk_products=int((plans.modeled_unserved_units > 0).sum()),
+    -         scope="SYNTHETIC independent product capacities; uniform forecast demand; lost sales; no shared factory optimization",
+    -     )
+197 +     summary = {
+198 +         "policy": asdict(policy),
+199 +         "products": len(plans),
+200 +         "requested_production": float(plans.requested_production.sum()),
+201 +         "planned_production": float(plans.planned_production.sum()),
+202 +         "deferred_production": float(plans.deferred_production.sum()),
+203 +         "capacity_limited_products": int(plans.capacity_limited.sum()),
+204 +         "modeled_unserved_units": float(plans.modeled_unserved_units.sum()),
+205 +         "modeled_risk_products": int((plans.modeled_unserved_units > 0).sum()),
+206 +         "scope": "SYNTHETIC independent product capacities; uniform forecast demand; lost sales; no shared factory optimization",
+207 +     }
+208 |     (out / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False))
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/supplysight/runtime_log.py:2:1
+  |
+1 |   """Client-side notebook logs; never imply server-side Spark logs are available."""
+2 | / import json
+3 | | import platform
+4 | | from datetime import datetime, timezone
+5 | | from importlib.metadata import version, PackageNotFoundError
+  | |____________________________________________________________^
+help: Organize imports
+  |
+4 | from datetime import datetime, timezone
+  - from importlib.metadata import version, PackageNotFoundError
+5 + from importlib.metadata import PackageNotFoundError, version
+6 |
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/supplysight/runtime_log.py:13:9
+   |
+11 | …     try:packages[name]=version(name)
+12 | …     except PackageNotFoundError:packages[name]="unavailable"
+13 | … row=dict(elapsed_seconds=elapsed_seconds,notebook=notebook,environment=environment,utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),spark=spark.version if spark is not None else None,packages=packages)
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14 | … folder=root/"reports";folder.mkdir(parents=True,exist_ok=True)
+15 | … with (folder/"notebook_runtime.jsonl").open("a") as f:f.write(json.dumps(row)+"\n")
+   |
+help: Rewrite as a literal
+   |
+12 |         except PackageNotFoundError:packages[name]="unavailable"
+   -     row=dict(elapsed_seconds=elapsed_seconds,notebook=notebook,environment=environment,utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),spark=spark.version if spark is not None else None,packages=packages)
+13 +     row={"elapsed_seconds": elapsed_seconds,"notebook": notebook,"environment": environment,"utc": datetime.now(timezone.utc).isoformat(),"python": platform.python_version(),"spark": spark.version if spark is not None else None,"packages": packages}
+14 |     folder=root/"reports";folder.mkdir(parents=True,exist_ok=True)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+UP017 [*] Use `datetime.UTC` alias
+  --> src/supplysight/runtime_log.py:13:105
+   |
+11 |         try:packages[name]=version(name)
+12 |         except PackageNotFoundError:packages[name]="unavailable"
+13 |     row=dict(elapsed_seconds=elapsed_seconds,notebook=notebook,environment=environment,utc=datetime.now(timezone.utc).isoformat(),pyth…
+   |                                                                                                         ^^^^^^^^^^^^
+14 |     folder=root/"reports";folder.mkdir(parents=True,exist_ok=True)
+15 |     with (folder/"notebook_runtime.jsonl").open("a") as f:f.write(json.dumps(row)+"\n")
+   |
+help: Convert to `datetime.UTC` alias
+   |
+3  | import platform
+   - from datetime import datetime, timezone
+4  + from datetime import datetime, timezone, UTC
+5  | from importlib.metadata import version, PackageNotFoundError
+--------------------------------------------------------------------------------
+12 |         except PackageNotFoundError:packages[name]="unavailable"
+   -     row=dict(elapsed_seconds=elapsed_seconds,notebook=notebook,environment=environment,utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),spark=spark.version if spark is not None else None,packages=packages)
+13 +     row=dict(elapsed_seconds=elapsed_seconds,notebook=notebook,environment=environment,utc=datetime.now(UTC).isoformat(),python=platform.python_version(),spark=spark.version if spark is not None else None,packages=packages)
+14 |     folder=root/"reports";folder.mkdir(parents=True,exist_ok=True)
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/supplysight/study.py:2:1
+  |
+1 |   """Prespecified comparison on reused historical rolling origins; no holdout tuning."""
+2 | / import hashlib
+3 | | import json
+4 | | from pathlib import Path
+5 | | import numpy as np
+6 | | import pandas as pd
+7 | | from .forecasting import backtest
+8 | | from .metrics import errors
+9 | | from .config import FOLDS, HORIZON
+  | |__________________________________^
+help: Organize imports
+   |
+4  | from pathlib import Path
+5  +
+6  | import numpy as np
+7  | import pandas as pd
+8  +
+9  + from .config import FOLDS, HORIZON
+10 | from .forecasting import backtest
+11 | from .metrics import errors
+   - from .config import FOLDS, HORIZON
+12 |
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/supplysight/study.py:40:21
+   |
+38 | …loat((nz.std()/nz.mean())**2) if len(nz) else None
+39 | … = "all_zero" if not len(nz) else ("lumpy" if adi >= 1.32 and cv2 >= .49 else "intermittent" if adi >= 1.32 else "erratic" if cv2 >= .49 else "smooth")
+40 | …pend(dict(product_id=p, training_units=float(y.sum()), training_days=len(y), zero_share=float((y==0).mean()), adi=adi, nonzero_cv2=cv2, demand_pattern=pattern))
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+41 | …taFrame(rows)
+42 | …t.training_units.quantile([1/3,2/3])
+   |
+help: Rewrite as a literal
+   |
+39 |         pattern = "all_zero" if not len(nz) else ("lumpy" if adi >= 1.32 and cv2 >= .49 else "intermittent" if adi >= 1.32 else "erratic" if cv2 >= .49 else "smooth")
+   -         rows.append(dict(product_id=p, training_units=float(y.sum()), training_days=len(y), zero_share=float((y==0).mean()), adi=adi, nonzero_cv2=cv2, demand_pattern=pattern))
+40 +         rows.append({"product_id": p, "training_units": float(y.sum()), "training_days": len(y), "zero_share": float((y==0).mean()), "adi": adi, "nonzero_cv2": cv2, "demand_pattern": pattern})
+41 |     out = pd.DataFrame(rows)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/supplysight/study.py:56:16
+   |
+54 | …ly.duplicated(["product_id","date"]).any() or daily.units.isna().any() or (daily.units < 0).any():
+55 | …ise ValueError("Unique finite nonnegative daily series required")
+56 | …st = dict(protocol="Fixed before this execution; h… selection; planning retains seasonal_naive")
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^…^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+57 | …t/"protocol.json").write_text(json.dumps(manifest, indent=2))
+58 | …ne, _, _ = backtest(daily)
+   |
+help: Rewrite as a literal
+   |
+55 |         raise ValueError("Unique finite nonnegative daily series required")
+   -     manifest = dict(protocol="Fixed before this execution; historical test dates were evaluated previously", source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(), models=["naive","seasonal_naive","ridge","croston_sba"], alpha=.1, folds=FOLDS, horizon=HORIZON, segmentation="initial training prefix only, volume tertiles", future_selection="No selection; planning retains seasonal_naive")
+56 +     manifest = {"protocol": "Fixed before this execution; historical test dates were evaluated previously", "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(), "models": ["naive","seasonal_naive","ridge","croston_sba"], "alpha": .1, "folds": FOLDS, "horizon": HORIZON, "segmentation": "initial training prefix only, volume tertiles", "future_selection": "No selection; planning retains seasonal_naive"}
+57 |     (output/"protocol.json").write_text(json.dumps(manifest, indent=2))
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_constrained_planning.py:1:1
+  |
+1 | / import numpy as np
+2 | | import pandas as pd
+3 | | import pytest
+4 | | from supplysight.constrained_planning import Policy, apply_forecasts, plan_product, plan_table
+  | |______________________________________________________________________________________________^
+help: Organize imports
+  |
+3 | import pytest
+4 +
+5 | from supplysight.constrained_planning import Policy, apply_forecasts, plan_product, plan_table
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_constrained_planning.py:70:12
+   |
+68 | @pytest.mark.parametrize("value", [-1, float("nan"), float("inf")])
+69 | def test_invalid_numbers(field, value):
+70 |     args = dict(forecast_daily=1, on_hand=1, lead_days=1, weekly_capacity=1, std_daily=1)
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+71 |     args[field] = value
+72 |     with pytest.raises(ValueError):
+   |
+help: Rewrite as a literal
+   |
+69 | def test_invalid_numbers(field, value):
+   -     args = dict(forecast_daily=1, on_hand=1, lead_days=1, weekly_capacity=1, std_daily=1)
+70 +     args = {"forecast_daily": 1, "on_hand": 1, "lead_days": 1, "weekly_capacity": 1, "std_daily": 1}
+71 |     args[field] = value
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> tests/test_constrained_planning.py:94:13
+    |
+ 92 |       return pd.DataFrame(
+ 93 |           [
+ 94 | /             dict(
+ 95 | |                 product_id="p1",
+ 96 | |                 on_hand=0,
+ 97 | |                 lead_days=2,
+ 98 | |                 weekly_capacity=30,
+ 99 | |                 std_daily_28d=1,
+100 | |                 forecast_daily=10,
+101 | |                 planning_source="SYNTHETIC test",
+102 | |             )
+    | |_____________^
+103 |           ]
+104 |       )
+    |
+help: Rewrite as a literal
+    |
+93  |         [
+    -             dict(
+    -                 product_id="p1",
+    -                 on_hand=0,
+    -                 lead_days=2,
+    -                 weekly_capacity=30,
+    -                 std_daily_28d=1,
+    -                 forecast_daily=10,
+    -                 planning_source="SYNTHETIC test",
+    -             )
+94  +             {
+95  +                 "product_id": "p1",
+96  +                 "on_hand": 0,
+97  +                 "lead_days": 2,
+98  +                 "weekly_capacity": 30,
+99  +                 "std_daily_28d": 1,
+100 +                 "forecast_daily": 10,
+101 +                 "planning_source": "SYNTHETIC test",
+102 +             }
+103 |         ]
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> tests/test_constrained_planning.py:124:47
+    |
+122 | def test_forecast_override_key_alignment():
+123 |     f = scenario()
+124 |     changed = apply_forecasts(f, pd.DataFrame(dict(product_id=["p1"], forecast_daily=[2])))
+    |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+125 |     assert changed.forecast_daily.iloc[0] == 2
+126 |     with pytest.raises(ValueError):
+    |
+help: Rewrite as a literal
+    |
+123 |     f = scenario()
+    -     changed = apply_forecasts(f, pd.DataFrame(dict(product_id=["p1"], forecast_daily=[2])))
+124 +     changed = apply_forecasts(f, pd.DataFrame({"product_id": ["p1"], "forecast_daily": [2]}))
+125 |     assert changed.forecast_daily.iloc[0] == 2
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> tests/test_constrained_planning.py:127:41
+    |
+125 |     assert changed.forecast_daily.iloc[0] == 2
+126 |     with pytest.raises(ValueError):
+127 |         apply_forecasts(f, pd.DataFrame(dict(product_id=["p2"], forecast_daily=[2])))
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+    |
+126 |     with pytest.raises(ValueError):
+    -         apply_forecasts(f, pd.DataFrame(dict(product_id=["p2"], forecast_daily=[2])))
+127 +         apply_forecasts(f, pd.DataFrame({"product_id": ["p2"], "forecast_daily": [2]}))
+128 |
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_enhancement.py:1:1
+  |
+1 | / import numpy as np
+2 | | import pandas as pd
+3 | | import pytest
+4 | | from supplysight.study import croston_sba,segments
+5 | | from supplysight.capacity import capacity_metrics
+6 | | from supplysight.forecasting import predict
+  | |___________________________________________^
+help: Organize imports
+  |
+3 | import pytest
+  - from supplysight.study import croston_sba,segments
+4 +
+5 | from supplysight.capacity import capacity_metrics
+6 | from supplysight.forecasting import predict
+7 + from supplysight.study import croston_sba, segments
+8 |
+  |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_enhancement.py:47:20
+   |
+46 | def test_segmentation_never_reads_holdout():
+47 |     g=pd.DataFrame(dict(product_id=["x"]*100,date=pd.date_range("2020-01-01",periods=100),units=np.arange(100)))
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+48 |     before=segments(g)
+49 |     g.loc[58:,"units"]=999999
+   |
+help: Rewrite as a literal
+   |
+46 | def test_segmentation_never_reads_holdout():
+   -     g=pd.DataFrame(dict(product_id=["x"]*100,date=pd.date_range("2020-01-01",periods=100),units=np.arange(100)))
+47 +     g=pd.DataFrame({"product_id": ["x"]*100,"date": pd.date_range("2020-01-01",periods=100),"units": np.arange(100)})
+48 |     before=segments(g)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_enhancement.py:54:20
+   |
+53 | def test_recursive_forecast_ignores_future_actuals():
+54 |     g=pd.DataFrame(dict(date=pd.date_range("2020-01-01",periods=100),units=np.arange(100)%13))
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+55 |     train=g.iloc[:80].copy();dates=list(g.date.iloc[80:94])
+56 |     before=predict(train,dates,"ridge")
+   |
+help: Rewrite as a literal
+   |
+53 | def test_recursive_forecast_ignores_future_actuals():
+   -     g=pd.DataFrame(dict(date=pd.date_range("2020-01-01",periods=100),units=np.arange(100)%13))
+54 +     g=pd.DataFrame({"date": pd.date_range("2020-01-01",periods=100),"units": np.arange(100)%13})
+55 |     train=g.iloc[:80].copy();dates=list(g.date.iloc[80:94])
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 34 errors.
+[*] 19 fixable with `--fix` (13 unsafe fixes available with `--fix --unsafe-fixes`).

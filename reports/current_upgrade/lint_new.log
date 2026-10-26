@@ -1,0 +1,22 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_constrained_planning.py:1:1
+  |
+1 | / import numpy as np
+2 | | import pandas as pd
+3 | | import pytest
+4 | | from supplysight.constrained_planning import (
+5 | |     Policy,
+6 | |     apply_forecasts,
+7 | |     plan_product,
+8 | |     plan_table,
+9 | | )
+  | |_^
+help: Organize imports
+  |
+3 | import pytest
+4 +
+5 | from supplysight.constrained_planning import (
+  |
+
+Found 1 error.
+[*] 1 fixable with `--fix`.

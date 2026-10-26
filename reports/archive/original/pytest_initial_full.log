@@ -1,0 +1,37 @@
+...........................................F.                            [100%]
+=================================== FAILURES ===================================
+___________________ test_excel_structure_and_cached_formulas ___________________
+
+    def test_excel_structure_and_cached_formulas():
+        import openpyxl
+    
+        path = ROOT / "excel/SupplySight_Operations_Analysis.xlsx"
+        assert path.exists(), "Generate workbook before full release checks"
+        wb = openpyxl.load_workbook(path, data_only=False)
+        expected = {
+            "Executive Summary",
+            "Product Master",
+            "Demand History",
+            "Forecast Results",
+            "Inventory Risk",
+            "KPI Validation",
+            "Data Dictionary",
+        }
+        assert set(wb.sheetnames) == expected
+        assert len(wb["Executive Summary"]._charts) == 1
+        assert len(wb["Inventory Risk"].conditional_formatting) > 0
+        calculated = openpyxl.load_workbook(path, data_only=True)
+        stats = json.loads((ROOT / "reports/evaluation.json").read_text())
+        assert calculated["Executive Summary"]["B6"].value == stats["gold_units"]
+        assert calculated["Executive Summary"]["B7"].value == stats["products"]
+        assert calculated["Executive Summary"]["B8"].value == stats["at_risk_products_synthetic"]
+        assert calculated["Executive Summary"]["B9"].value == stats["overstock_products_synthetic"]
+        for row in calculated["KPI Validation"].iter_rows(min_row=6):
+>           assert abs(row[3].value) < 1e-6
+                   ^^^^^^^^^^^^^^^^^
+E           TypeError: bad operand type for abs(): 'NoneType'
+
+SupplySight-Analytics/tests/test_reconciliation.py:62: TypeError
+=========================== short test summary info ============================
+FAILED SupplySight-Analytics/tests/test_reconciliation.py::test_excel_structure_and_cached_formulas
+1 failed, 44 passed in 19.44s

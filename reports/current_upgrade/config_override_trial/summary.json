@@ -1,0 +1,15 @@
+{
+  "policy": {
+    "horizon_days": 7,
+    "review_days": 7,
+    "safety_z": 1.65
+  },
+  "products": 1,
+  "requested_production": 102.0,
+  "planned_production": 35.0,
+  "deferred_production": 67.0,
+  "capacity_limited_products": 1,
+  "modeled_unserved_units": 20.0,
+  "modeled_risk_products": 1,
+  "scope": "SYNTHETIC independent product capacities; uniform forecast demand; lost sales; no shared factory optimization"
+}

@@ -1,0 +1,11 @@
+{"kind":"sheet","id":"ws/gr323b","name":"Executive Summary","index":0,"range":"A1:D20","address":"A1:D20"}
+{"kind":"sheet","id":"ws/z5pva3","name":"Inventory Risk","index":1,"range":"A1:Q25","address":"A1:Q25"}
+{"kind":"sheet","id":"ws/s9m8e4","name":"Forecast Results","index":2,"range":"A1:I2525","address":"A1:I2525"}
+{"kind":"sheet","id":"ws/amzjbl","name":"Product Master","index":3,"range":"A1:B25","address":"A1:B25"}
+{"kind":"sheet","id":"ws/0l7e8c","name":"Demand History","index":4,"range":"A1:C7305","address":"A1:C7305"}
+{"kind":"sheet","id":"ws/ddoh23","name":"KPI Validation","index":5,"range":"A1:E19","address":"A1:E19"}
+{"kind":"sheet","id":"ws/wh8m5d","name":"Data Dictionary","index":6,"range":"A1:F57","address":"A1:F57"}
+{"kind":"notice","message":"Cell search matched 0 entries."}
+{"kind":"table","sheet":"Executive Summary","address":"A23:B25","rows":3,"cols":2,"values":[["Capacity shortfalls (synthetic)",5],["Lead-time stock risks (synthetic)",6],["Any planning exception (synthetic)",10]]}
+Inspect result written to file: /workspace/scratch/3accceb89fa4/work/SupplySight-Analytics/excel/SupplySight_Operations_Analysis.xlsx.inspect.ndjson
+Exported with original formulas preserved and scenario dependencies tested.

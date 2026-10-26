@@ -1,0 +1,7 @@
+# Add through the serverless environment panel. Do not install pyspark here.
+pandas==2.2.3
+numpy==2.3.5
+scikit-learn==1.8.0
+pyarrow==26.0.0
+duckdb==2.0.0
+matplotlib==3.10.8

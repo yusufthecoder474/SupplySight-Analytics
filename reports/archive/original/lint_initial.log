@@ -1,0 +1,21 @@
+FURB192 Prefer `min` over `sorted()` to compute the minimum value in a sequence
+   --> SupplySight-Analytics/src/supplysight/reporting.py:108:15
+    |
+106 |     ax.set(ylabel="WAPE (%) — lower is better", title="Measured rolling-origin forecast errors | public retail sales")
+107 |     fig.tight_layout(); fig.savefig(target/"forecast_comparison.png", dpi=150); plt.close(fig)
+108 |     product = sorted(daily.product_id.unique())[0]
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+109 |     g = forecasts[(forecasts.product_id == product) & (forecasts.fold == FOLDS)]
+110 |     fig, ax = plt.subplots(figsize=(10, 4.5))
+    |
+help: Replace with `min`
+    |
+107 |     fig.tight_layout(); fig.savefig(target/"forecast_comparison.png", dpi=150); plt.close(fig)
+    -     product = sorted(daily.product_id.unique())[0]
+108 +     product = min(daily.product_id.unique())
+109 |     g = forecasts[(forecasts.product_id == product) & (forecasts.fold == FOLDS)]
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 20 errors (19 fixed, 1 remaining).
+1 unsafe fix available with `--fix --unsafe-fixes`.

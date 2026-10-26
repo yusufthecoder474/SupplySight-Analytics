@@ -1,0 +1,44 @@
+// Create each measure separately in Power BI Desktop. AUTHORED, NOT ENGINE-VERIFIED.
+// Tables must have these exact names. Model slicer: Forecast[model], single-select.
+Total Demand = SUM(Demand[units])
+
+Products Monitored = DISTINCTCOUNT(Product[product_id])
+
+Chosen Model = SELECTEDVALUE(Forecast[model], "seasonal_naive")
+
+Evaluated Actual Units =
+VAR ModelName = [Chosen Model]
+RETURN CALCULATE(SUM(Forecast[actual]), Forecast[model] = ModelName)
+
+Forecast Units =
+VAR ModelName = [Chosen Model]
+RETURN CALCULATE(SUM(Forecast[predicted]), Forecast[model] = ModelName)
+
+Forecast Absolute Error =
+VAR ModelName = [Chosen Model]
+RETURN CALCULATE(SUM(Forecast[absolute_error]), Forecast[model] = ModelName)
+
+Forecast WAPE = DIVIDE([Forecast Absolute Error], [Evaluated Actual Units])
+
+Forecast MAE =
+VAR ModelName = [Chosen Model]
+RETURN CALCULATE(AVERAGE(Forecast[absolute_error]), Forecast[model] = ModelName)
+
+Forecast Bias = DIVIDE([Forecast Units] - [Evaluated Actual Units], [Evaluated Actual Units])
+
+At Risk Products = CALCULATE(COUNTROWS(Inventory), Inventory[stock_risk] = TRUE())
+
+Overstock Products = CALCULATE(COUNTROWS(Inventory), Inventory[overstock] = TRUE())
+
+Mean Days Cover = AVERAGE(Inventory[days_cover])
+
+Planned Capacity Utilization = DIVIDE(SUMX(Inventory, Inventory[forecast_daily] * 7), SUM(Inventory[weekly_capacity]))
+
+Demand CV = DIVIDE(STDEV.P(Demand[units]), AVERAGE(Demand[units]))
+
+Previous Week Demand = CALCULATE([Total Demand], DATEADD('Date'[date], -7, DAY))
+
+Week Demand Change = DIVIDE([Total Demand] - [Previous Week Demand], [Previous Week Demand])
+
+Reorder Point Units = SUM(Inventory[reorder_point])
+

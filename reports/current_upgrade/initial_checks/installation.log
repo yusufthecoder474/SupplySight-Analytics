@@ -1,0 +1,12 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: supplysight
+  Building wheel for supplysight (pyproject.toml): started
+  Building wheel for supplysight (pyproject.toml): finished with status 'done'
+  Created wheel for supplysight: filename=supplysight-1.0.0-py3-none-any.whl size=23488 sha256=417e911ee814b8b9dd45bc57a9d95244b0727e5873995782673d464cf0d1bde7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-47jl1ujb/wheels/26/fd/6d/1608c67737b4f1b22331b54aa8ba29a48d51a07b68c63b41f5
+Successfully built supplysight
+Installing collected packages: supplysight
+Successfully installed supplysight-1.0.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

@@ -1,0 +1,9 @@
+{
+  "products": 20,
+  "capacity_shortfall_products": 5,
+  "lead_time_stock_risk_products": 6,
+  "reorder_required_products": 8,
+  "exceptions": 10,
+  "weekly_demand": 11238.0,
+  "weekly_capacity": 14110.0
+}

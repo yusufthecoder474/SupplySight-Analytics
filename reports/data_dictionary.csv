@@ -1,0 +1,53 @@
+dataset,grain,column,type,nullable_in_run,lineage
+product_master,one row/product,product_id,object,False,accepted UCI sales → daily totals → derived analytics
+product_master,one row/product,description,object,False,accepted UCI sales → daily totals → derived analytics
+daily_demand,product/day,product_id,object,False,accepted UCI sales → daily totals → derived analytics
+daily_demand,product/day,date,datetime64[ns],False,accepted UCI sales → daily totals → derived analytics
+daily_demand,product/day,units,float64,False,accepted UCI sales → daily totals → derived analytics
+daily_demand,product/day,observed_or_assumed_zero,object,False,accepted UCI sales → daily totals → derived analytics
+weekly_demand,product/week (edge weeks partial),product_id,object,False,accepted UCI sales → daily totals → derived analytics
+weekly_demand,product/week (edge weeks partial),week,object,False,accepted UCI sales → daily totals → derived analytics
+weekly_demand,product/week (edge weeks partial),units,float64,False,accepted UCI sales → daily totals → derived analytics
+weekly_demand,product/week (edge weeks partial),days_in_week,int64,False,accepted UCI sales → daily totals → derived analytics
+date_dimension,one row/calendar day,date,object,False,accepted UCI sales → daily totals → derived analytics
+date_dimension,one row/calendar day,year,int32,False,accepted UCI sales → daily totals → derived analytics
+date_dimension,one row/calendar day,month,int32,False,accepted UCI sales → daily totals → derived analytics
+date_dimension,one row/calendar day,week,object,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,product_id,object,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,fold,int64,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,train_end,datetime64[ns],False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,date,datetime64[ns],False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,model,object,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,actual,float64,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,predicted,float64,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,absolute_error,float64,False,accepted UCI sales → daily totals → derived analytics
+forecast_results,product/fold/model/target day,signed_error,float64,False,accepted UCI sales → daily totals → derived analytics
+future_forecast,product/future day,product_id,object,False,accepted UCI sales → daily totals → derived analytics
+future_forecast,product/future day,as_of,datetime64[ns],False,accepted UCI sales → daily totals → derived analytics
+future_forecast,product/future day,date,datetime64[ns],False,accepted UCI sales → daily totals → derived analytics
+future_forecast,product/future day,model,object,False,accepted UCI sales → daily totals → derived analytics
+future_forecast,product/future day,predicted,float64,False,accepted UCI sales → daily totals → derived analytics
+inventory_risk,product/as-of scenario,product_id,object,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,as_of,datetime64[ns],False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,mean_daily_28d,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,std_daily_28d,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,on_hand,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,lead_days,int64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,weekly_capacity,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,forecast_daily,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,days_cover,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,reorder_point,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,stock_risk,bool,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,overstock,bool,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,planned_utilization,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,demand_cv,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,wow_change,float64,False,SYNTHETIC planning plus historical demand and prespecified forecast
+inventory_risk,product/as-of scenario,planning_source,object,False,SYNTHETIC planning plus historical demand and prespecified forecast
+product_forecast_scores,"product/model, pooled across folds",product_id,object,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",model,object,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",mae,float64,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",wape,float64,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",bias,float64,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",mape_nonzero_only,float64,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",absolute_error,float64,False,accepted UCI sales → daily totals → derived analytics
+product_forecast_scores,"product/model, pooled across folds",actual_units,float64,False,accepted UCI sales → daily totals → derived analytics

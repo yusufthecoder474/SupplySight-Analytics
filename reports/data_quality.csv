@@ -1,0 +1,9 @@
+rule,description,violating_rows
+source_id,Source row ID is a positive integer and unique,0
+invoice,Invoice identifier is six digits; cancellation invoices isolated,709
+product,Product identifier has five digits and optional alphabetic suffix,0
+date,Timestamp parses and lies in the complete reporting window,900
+quantity,Quantity is an integer strictly greater than zero,721
+price,Price is finite and positive,41
+description,Description is nonempty,12
+duplicate,Exact business-field duplicates retain lowest source row ID,184

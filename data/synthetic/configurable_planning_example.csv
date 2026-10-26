@@ -1,0 +1,2 @@
+product_id,on_hand,lead_days,weekly_capacity,std_daily_28d,safety_stock,reorder_point,planning_source
+DEMO,20,4,35,3,12,52,SYNTHETIC hand-calculated demonstration

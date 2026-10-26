@@ -1,0 +1,21 @@
+product_id,as_of,on_hand,lead_days,weekly_capacity,planning_source
+20725,2011-11-30,4054.0,20,525.0,SYNTHETIC scenario; seed 52316; not observed inventory
+21181,2011-11-30,1303.0,5,342.0,SYNTHETIC scenario; seed 52316; not observed inventory
+21212,2011-11-30,3363.0,5,588.0,SYNTHETIC scenario; seed 52316; not observed inventory
+21733,2011-11-30,2312.0,7,458.0,SYNTHETIC scenario; seed 52316; not observed inventory
+21754,2011-11-30,211.0,15,59.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22111,2011-11-30,280.0,13,199.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22197,2011-11-30,10833.0,8,3281.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22423,2011-11-30,909.0,13,290.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22457,2011-11-30,2338.0,14,285.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22469,2011-11-30,3311.0,16,950.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22470,2011-11-30,736.0,10,308.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22666,2011-11-30,2856.0,6,289.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22720,2011-11-30,369.0,21,171.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22722,2011-11-30,109.0,20,83.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22960,2011-11-30,644.0,11,290.0,SYNTHETIC scenario; seed 52316; not observed inventory
+22961,2011-11-30,3522.0,7,506.0,SYNTHETIC scenario; seed 52316; not observed inventory
+84378,2011-11-30,2946.0,20,262.0,SYNTHETIC scenario; seed 52316; not observed inventory
+84879,2011-11-30,1896.0,15,1534.0,SYNTHETIC scenario; seed 52316; not observed inventory
+85099B,2011-11-30,7982.0,13,1899.0,SYNTHETIC scenario; seed 52316; not observed inventory
+85123A,2011-11-30,663.0,17,1791.0,SYNTHETIC scenario; seed 52316; not observed inventory

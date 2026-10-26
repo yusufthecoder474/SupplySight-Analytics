@@ -1,0 +1,20 @@
+{
+  "tests": {
+    "tests": 46,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "workbook_sheets": 7,
+  "excel_formulas": 5222,
+  "xlookup_formulas": 20,
+  "excel_tables": 6,
+  "native_charts_in_xlsx": 1,
+  "dax_authored": 17,
+  "dax_engine_verified": 0,
+  "powerbi_pages_completed": 0,
+  "inventory_kpi_definitions": 6,
+  "total_kpi_definitions": 13,
+  "local_notebook_files_executed": 5,
+  "sql_diagnostics_executed": 4
+}
